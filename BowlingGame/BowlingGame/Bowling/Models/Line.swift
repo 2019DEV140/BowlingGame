@@ -40,6 +40,24 @@ class Line {
     }
     
     func score() -> Int {
-        
+        var score = 0
+        for i in 0..<10 {
+            switch frames[i].type() {
+            case .notAllKnocked:
+                score += frames[i].sum()
+                break;
+            case .spare:
+                score += frames[i].sum() + frames[i + 1].tries[0]
+                break;
+            case .strike:
+                if frames[i + 1].type() == .strike {
+                    score += frames[i].sum() + frames[i + 1].sum() + frames[i + 2].sum()
+                } else {
+                    score += frames[i].sum() + frames[i + 1].sum()
+                }
+                break;
+            }
+        }
+        return score
     }
 }

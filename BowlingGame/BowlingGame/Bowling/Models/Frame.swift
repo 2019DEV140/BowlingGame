@@ -30,4 +30,12 @@ struct Frame {
             }
         }
     }
+    
+    func sum() -> Int {
+        var sum = 0
+        for t in tries {
+            sum += t
+        }
+        return sum
+    }
 }
