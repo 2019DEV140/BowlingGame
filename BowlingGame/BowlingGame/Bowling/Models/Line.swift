@@ -6,11 +6,13 @@
 import Foundation
 
 class Line {
-    var frames : [Frame]
+    var frames: [Frame]!
     
-    init(frames: [Frame]) {
-        self.frames = frames
+    init(withRolls rolls: [Int]) {
+        self.frames = createFrames(withRolls: rolls)
     }
     
-    
+    func createFrames(withRolls rolls: [Int]) -> [Frame] {
+        
+    }
 }

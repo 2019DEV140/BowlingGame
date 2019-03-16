@@ -65,3 +65,83 @@ class FrameSpec: QuickSpec {
         }
     }
 }
+
+class LineSpec: QuickSpec {
+    override func spec() {
+        describe("A line") {
+            var aLine: Line!
+            
+            context("is made of frame") {
+                context("Full of strike") {
+                    beforeEach {
+                        aLine = Line(withRolls: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10])
+                    }
+                    
+                    it("it contains 12 rolls so 10 frame + 2 bonuses") {
+                        expect(aLine.frames.count).to(equal(12))
+                        expect(aLine.frames[0].type()).to(equal(.strike))
+                    }
+                }
+                
+                context("Full of spare") {
+                    beforeEach {
+                        aLine = Line(withRolls: [5, 5,
+                                                 5, 5,
+                                                 5, 5,
+                                                 5, 5,
+                                                 5, 5,
+                                                 5, 5,
+                                                 5, 5,
+                                                 5, 5,
+                                                 5, 5,
+                                                 5, 5, 5])
+                    }
+                    
+                    it("it contains 21 rolls so 10 frame + 1 bonus") {
+                        expect(aLine.frames.count).to(equal(11))
+                        expect(aLine.frames[0].type()).to(equal(.spare))
+                    }
+                }
+                
+                context("Full of 9-0") {
+                    beforeEach {
+                        aLine = Line(withRolls: [9, 0,
+                                                 9, 0,
+                                                 9, 0,
+                                                 9, 0,
+                                                 9, 0,
+                                                 9, 0,
+                                                 9, 0,
+                                                 9, 0,
+                                                 9, 0,
+                                                 9, 0])
+                    }
+                    
+                    it("it contains 20 rolls so 10 frame") {
+                        expect(aLine.frames.count).to(equal(10))
+                        expect(aLine.frames[0].type()).to(equal(.notAllKnocked))
+                    }
+                }
+                
+                context("A random game") {
+                    beforeEach {
+                        aLine = Line(withRolls: [5, 5,
+                                                 10,
+                                                 9, 0,
+                                                 5, 5,
+                                                 10,
+                                                 9, 0,
+                                                 5, 5,
+                                                 10,
+                                                 9, 0,
+                                                 5, 5, 10])
+                    }
+                    
+                    it("it contains 21 rolls so 10 frame + 1 bonus") {
+                        expect(aLine.frames.count).to(equal(11))
+                    }
+                }
+            }
+        }
+    }
+}
