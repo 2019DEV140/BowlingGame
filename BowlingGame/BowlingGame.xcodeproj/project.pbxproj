@@ -16,8 +16,9 @@
 		41ABBD68223D38FD00C01863 /* BowlingGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ABBD67223D38FD00C01863 /* BowlingGameTests.swift */; };
 		41AFA9DC223D430700EFDF40 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AFA9DB223D430700EFDF40 /* Frame.swift */; };
 		41AFA9DE223D446D00EFDF40 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AFA9DD223D446D00EFDF40 /* Line.swift */; };
+		41AFA9E0223D464200EFDF40 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AFA9DD223D446D00EFDF40 /* Line.swift */; };
+		41AFA9E1223D464400EFDF40 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AFA9DB223D430700EFDF40 /* Frame.swift */; };
 		489B756A7D04C6C084A48E1F /* Pods_BowlingGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B241C71984AD23B66AEB5700 /* Pods_BowlingGameTests.framework */; };
-		4CEB0793A124A56B135E4037 /* Pods_BowlingGame_BowlingGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F08153EE5ED275430ADDDD /* Pods_BowlingGame_BowlingGameTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +69,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				489B756A7D04C6C084A48E1F /* Pods_BowlingGameTests.framework in Frameworks */,
-				4CEB0793A124A56B135E4037 /* Pods_BowlingGame_BowlingGameTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +169,6 @@
 				41ABBD4B223D38FB00C01863 /* Sources */,
 				41ABBD4C223D38FB00C01863 /* Frameworks */,
 				41ABBD4D223D38FB00C01863 /* Resources */,
-				E6E6D22496012BD881657E26 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,6 +187,7 @@
 				41ABBD5F223D38FD00C01863 /* Sources */,
 				41ABBD60223D38FD00C01863 /* Frameworks */,
 				41ABBD61223D38FD00C01863 /* Resources */,
+				8C291C69558749064DBF632B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -258,6 +258,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8C291C69558749064DBF632B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BowlingGameTests/Pods-BowlingGameTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BowlingGameTests/Pods-BowlingGameTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		90A0DEB9DE808B61D85E53F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,30 +326,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E6E6D22496012BD881657E26 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BowlingGame/Pods-BowlingGame-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BowlingGame/Pods-BowlingGame-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -344,7 +344,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41AFA9E1223D464400EFDF40 /* Frame.swift in Sources */,
 				41ABBD68223D38FD00C01863 /* BowlingGameTests.swift in Sources */,
+				41AFA9E0223D464200EFDF40 /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
