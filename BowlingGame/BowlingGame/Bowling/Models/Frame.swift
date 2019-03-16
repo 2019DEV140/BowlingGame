@@ -16,7 +16,11 @@ struct Frame {
     
     func type() -> TypeFrame {
         if tries.count == 1 {
-            return .strike
+            if tries[0] < 10 {
+                return .notAllKnocked
+            } else {
+                return .strike
+            }
         } else {
             let sum = tries[0] + tries[1]
             if sum == 10 {

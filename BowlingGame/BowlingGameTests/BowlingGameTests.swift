@@ -37,16 +37,31 @@ class FrameSpec: QuickSpec {
                 })
             })
             
-            context("not all the pin are knocked", closure: {
-                beforeEach {
-                    aFrame = Frame(tries: [8, 1])
+            context("not all the pin are knocked") {
+                context("") {
+                    beforeEach {
+                        aFrame = Frame(tries: [8, 1])
+                    }
+                    it("it is a normal case") {
+                        expect(aFrame.tries.count).to(equal(2))
+                        expect(aFrame.tries[0] + aFrame.tries[1]).toNot(equal(10))
+                        expect(aFrame.type()).to(equal(.notAllKnocked))
+                    }
                 }
-                it("it is a normal case") {
-                    expect(aFrame.tries.count).to(equal(2))
-                    expect(aFrame.tries[0] + aFrame.tries[1]).toNot(equal(10))
-                    expect(aFrame.type()).to(equal(.notAllKnocked))
+                
+                context("") {
+                    
+                    beforeEach {
+                        aFrame = Frame(tries: [8])
+                    }
+                    
+                    it("it is a bonus case") {
+                        expect(aFrame.tries.count).to(equal(1))
+                        expect(aFrame.tries[0]).toNot(equal(10))
+                        expect(aFrame.type()).to(equal(.notAllKnocked))
+                    }
                 }
-            })
+            }
         }
     }
 }
