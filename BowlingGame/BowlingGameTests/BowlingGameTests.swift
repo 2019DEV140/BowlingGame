@@ -81,6 +81,10 @@ class LineSpec: QuickSpec {
                         expect(aLine.frames.count).to(equal(12))
                         expect(aLine.frames[0].type()).to(equal(.strike))
                     }
+                    
+                    it("it has a score of 300") {
+                        expect(aLine.score()).to(equal(300))
+                    }
                 }
                 
                 context("Full of spare") {
@@ -100,6 +104,10 @@ class LineSpec: QuickSpec {
                     it("it contains 21 rolls so 10 frame + 1 bonus") {
                         expect(aLine.frames.count).to(equal(11))
                         expect(aLine.frames[0].type()).to(equal(.spare))
+                    }
+                    
+                    it("it has a score of 15O") {
+                        expect(aLine.score()).to(equal(150))
                     }
                 }
                 
@@ -121,6 +129,10 @@ class LineSpec: QuickSpec {
                         expect(aLine.frames.count).to(equal(10))
                         expect(aLine.frames[0].type()).to(equal(.notAllKnocked))
                     }
+                    
+                    it("it has a score of 90") {
+                        expect(aLine.score()).to(equal(90))
+                    }
                 }
                 
                 context("A random game") {
@@ -139,6 +151,10 @@ class LineSpec: QuickSpec {
                     
                     it("it contains 21 rolls so 10 frame + 1 bonus") {
                         expect(aLine.frames.count).to(equal(11))
+                    }
+                    
+                    it("it has a score of 164") {
+                        expect(aLine.score()).to(equal(164))
                     }
                 }
             }

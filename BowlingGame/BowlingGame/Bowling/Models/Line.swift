@@ -38,4 +38,8 @@ class Line {
         
         return frames
     }
+    
+    func score() -> Int {
+        
+    }
 }
